@@ -1,0 +1,2 @@
+# readonly
+ TypeScript readonly type
