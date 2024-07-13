@@ -1,4 +1,4 @@
-import { ReadonlyURL, ReadonlyURLSearchParams } from "./mod.ts";
+import type { ReadonlyURL, ReadonlyURLSearchParams } from "./mod.ts";
 import { assertEquals } from "jsr:@std/assert";
 
 Deno.test("url", () => {
