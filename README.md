@@ -1,5 +1,7 @@
 # @narumincho/readonly
 
+https://jsr.io/@narumincho/readonly
+
 TypeScript readonly type
 
 - ReadonlyURL
