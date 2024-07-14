@@ -171,24 +171,15 @@ export type ReadonlyUint8Array = {
         previousValue: number,
         currentValue: number,
         currentIndex: number,
-        array: Uint8Array,
+        array: ReadonlyUint8Array,
       ) => number,
     ): number;
-    // (
-    //   callbackfn: (
-    //     previousValue: number,
-    //     currentValue: number,
-    //     currentIndex: number,
-    //     array: Uint8Array,
-    //   ) => number,
-    //   initialValue: number,
-    // ): number;
     <U>(
       callbackfn: (
         previousValue: U,
         currentValue: number,
         currentIndex: number,
-        array: Uint8Array,
+        array: ReadonlyUint8Array,
       ) => U,
       initialValue: U,
     ): U;
@@ -210,24 +201,15 @@ export type ReadonlyUint8Array = {
         previousValue: number,
         currentValue: number,
         currentIndex: number,
-        array: Uint8Array,
+        array: ReadonlyUint8Array,
       ) => number,
     ): number;
-    // (
-    //   callbackfn: (
-    //     previousValue: number,
-    //     currentValue: number,
-    //     currentIndex: number,
-    //     array: Uint8Array,
-    //   ) => number,
-    //   initialValue: number,
-    // ): number
     <U>(
       callbackfn: (
         previousValue: U,
         currentValue: number,
         currentIndex: number,
-        array: Uint8Array,
+        array: ReadonlyUint8Array,
       ) => U,
       initialValue: U,
     ): U;
@@ -249,7 +231,11 @@ export type ReadonlyUint8Array = {
    * If thisArg is omitted, undefined is used as the this value.
    */
   readonly some: (
-    predicate: (value: number, index: number, array: Uint8Array) => boolean,
+    predicate: (
+      value: number,
+      index: number,
+      array: ReadonlyUint8Array,
+    ) => boolean,
     thisArg?: unknown,
   ) => boolean;
 
@@ -336,12 +322,16 @@ export type ReadonlyUint8Array = {
       predicate: (
         value: number,
         index: number,
-        array: Uint8Array,
+        array: ReadonlyUint8Array,
       ) => value is S,
       thisArg?: unknown,
     ): S | undefined;
     (
-      predicate: (value: number, index: number, array: Uint8Array) => unknown,
+      predicate: (
+        value: number,
+        index: number,
+        array: ReadonlyUint8Array,
+      ) => unknown,
       thisArg?: unknown,
     ): number | undefined;
   };
@@ -356,14 +346,18 @@ export type ReadonlyUint8Array = {
    * predicate. If it is not provided, undefined is used instead.
    */
   readonly findLastIndex: (
-    predicate: (value: number, index: number, array: Uint8Array) => unknown,
+    predicate: (
+      value: number,
+      index: number,
+      array: ReadonlyUint8Array,
+    ) => unknown,
     thisArg?: unknown,
   ) => number;
 
   /**
    * Copies the array and returns the copy with the elements in reverse order.
    */
-  readonly toReversed: () => Uint8Array;
+  readonly toReversed: () => ReadonlyUint8Array;
 
   /**
    * Copies and sorts the array.
@@ -377,7 +371,7 @@ export type ReadonlyUint8Array = {
    */
   readonly toSorted: (
     compareFn?: (a: number, b: number) => number,
-  ) => Uint8Array;
+  ) => ReadonlyUint8Array;
 
   /**
    * Copies the array and inserts the given number at the provided index.
@@ -386,5 +380,5 @@ export type ReadonlyUint8Array = {
    * @param value The value to insert into the copied array.
    * @returns A copy of the original array with the inserted value.
    */
-  readonly with: (index: number, value: number) => Uint8Array;
+  readonly with: (index: number, value: number) => ReadonlyUint8Array;
 };
