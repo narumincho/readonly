@@ -7,21 +7,29 @@ export type ReadonlyUint8Array = {
 
   /**
    * The size in bytes of each element in the array.
+   *
+   * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/BYTES_PER_ELEMENT)
    */
   readonly BYTES_PER_ELEMENT: number;
 
   /**
    * The ArrayBuffer instance referenced by the array.
+   *
+   * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/buffer)
    */
   readonly buffer: ArrayBufferLike;
 
   /**
    * The length in bytes of the array.
+   *
+   * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/byteLength)
    */
   readonly byteLength: number;
 
   /**
    * The offset in bytes of the array.
+   *
+   * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/byteOffset)
    */
   readonly byteOffset: number;
 
@@ -32,6 +40,8 @@ export type ReadonlyUint8Array = {
    * which is coercible to the Boolean value false, or until the end of the array.
    * @param thisArg An object to which the this keyword can refer in the predicate function.
    * If thisArg is omitted, undefined is used as the this value.
+   *
+   * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/every)
    */
   readonly every: (
     predicate: (
@@ -48,6 +58,8 @@ export type ReadonlyUint8Array = {
    * the predicate function one time for each element in the array.
    * @param thisArg An object to which the this keyword can refer in the predicate function.
    * If thisArg is omitted, undefined is used as the this value.
+   *
+   * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/filter)
    */
   readonly filter: (
     predicate: (
@@ -66,6 +78,8 @@ export type ReadonlyUint8Array = {
    * immediately returns that element value. Otherwise, find returns undefined.
    * @param thisArg If provided, it will be used as the this value for each invocation of
    * predicate. If it is not provided, undefined is used instead.
+   *
+   * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/find)
    */
   readonly find: {
     <S extends number>(
@@ -94,6 +108,8 @@ export type ReadonlyUint8Array = {
    * findIndex immediately returns that element index. Otherwise, findIndex returns -1.
    * @param thisArg If provided, it will be used as the this value for each invocation of
    * predicate. If it is not provided, undefined is used instead.
+   *
+   * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/findIndex)
    */
   readonly findIndex: (
     predicate: (
@@ -110,6 +126,8 @@ export type ReadonlyUint8Array = {
    * callbackfn function one time for each element in the array.
    * @param thisArg  An object to which the this keyword can refer in the callbackfn function.
    * If thisArg is omitted, undefined is used as the this value.
+   *
+   * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/forEach)
    */
   readonly forEach: (
     callbackfn: (
@@ -125,6 +143,8 @@ export type ReadonlyUint8Array = {
    * @param searchElement The value to locate in the array.
    * @param fromIndex The array index at which to begin the search. If fromIndex is omitted, the
    *  search starts at index 0.
+   *
+   * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/indexOf)
    */
   readonly indexOf: (searchElement: number, fromIndex?: number) => number;
 
@@ -132,6 +152,8 @@ export type ReadonlyUint8Array = {
    * Adds all the elements of an array separated by the specified separator string.
    * @param separator A string used to separate one element of an array from the next in the
    * resulting String. If omitted, the array elements are separated with a comma.
+   *
+   * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/join)
    */
   readonly join: (separator?: string) => string;
 
@@ -140,11 +162,15 @@ export type ReadonlyUint8Array = {
    * @param searchElement The value to locate in the array.
    * @param fromIndex The array index at which to begin the search. If fromIndex is omitted, the
    * search starts at index 0.
+   *
+   * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/lastIndexOf)
    */
   readonly lastIndexOf: (searchElement: number, fromIndex?: number) => number;
 
   /**
    * The length of the array.
+   *
+   * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/length)
    */
   readonly length: number;
 
@@ -155,6 +181,8 @@ export type ReadonlyUint8Array = {
    * callbackfn function one time for each element in the array.
    * @param thisArg An object to which the this keyword can refer in the callbackfn function.
    * If thisArg is omitted, undefined is used as the this value.
+   *
+   * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/map)
    */
   readonly map: (
     callbackfn: (
@@ -174,6 +202,8 @@ export type ReadonlyUint8Array = {
    * @param initialValue If initialValue is specified, it is used as the initial value to start
    * the accumulation. The first call to the callbackfn function provides this value as an argument
    * instead of an array value.
+   *
+   * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/reduce)
    */
   readonly reduce: {
     (
@@ -204,6 +234,8 @@ export type ReadonlyUint8Array = {
    * @param initialValue If initialValue is specified, it is used as the initial value to start
    * the accumulation. The first call to the callbackfn function provides this value as an
    * argument instead of an array value.
+   *
+   * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/reduceRight)
    */
   readonly reduceRight: {
     (
@@ -229,6 +261,8 @@ export type ReadonlyUint8Array = {
    * Returns a section of an array.
    * @param start The beginning of the specified portion of the array.
    * @param end The end of the specified portion of the array. This is exclusive of the element at the index 'end'.
+   *
+   * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/slice)
    */
   readonly slice: (start?: number, end?: number) => ReadonlyUint8Array;
 
@@ -239,6 +273,8 @@ export type ReadonlyUint8Array = {
    * which is coercible to the Boolean value true, or until the end of the array.
    * @param thisArg An object to which the this keyword can refer in the predicate function.
    * If thisArg is omitted, undefined is used as the this value.
+   *
+   * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/some)
    */
   readonly some: (
     predicate: (
@@ -254,11 +290,15 @@ export type ReadonlyUint8Array = {
    * at begin, inclusive, up to end, exclusive.
    * @param begin The index of the beginning of the array.
    * @param end The index of the end of the array.
+   *
+   * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/subarray)
    */
   readonly subarray: (begin?: number, end?: number) => ReadonlyUint8Array;
 
   /**
    * Returns a string representation of an array.
+   *
+   * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/toString)
    */
   readonly toString: () => string;
 
@@ -271,6 +311,8 @@ export type ReadonlyUint8Array = {
 
   /**
    * Converts a number to a string by using the current locale.
+   *
+   * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/toLocaleString)
    */
   readonly toLocaleString: {
     (): string;
@@ -282,17 +324,26 @@ export type ReadonlyUint8Array = {
 
   // from lib.es2015.iterable.d.ts
 
+  /**
+   * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/@@iterator)
+   */
   readonly [Symbol.iterator]: () => IterableIterator<number>;
   /**
    * Returns an array of key, value pairs for every entry in the array
+   *
+   * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/entries)
    */
   readonly entries: () => IterableIterator<readonly [number, number]>;
   /**
    * Returns an list of keys in the array
+   *
+   * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/keys)
    */
   readonly keys: () => IterableIterator<number>;
   /**
    * Returns an list of values in the array
+   *
+   * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/values)
    */
   readonly values: () => IterableIterator<number>;
 
@@ -305,6 +356,8 @@ export type ReadonlyUint8Array = {
    * Determines whether an array includes a certain element, returning true or false as appropriate.
    * @param searchElement The element to search for.
    * @param fromIndex The position in this array at which to begin searching for searchElement.
+   *
+   * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/includes)
    */
   readonly includes: (searchElement: number, fromIndex?: number) => boolean;
 
@@ -313,6 +366,8 @@ export type ReadonlyUint8Array = {
   /**
    * Returns the item located at the specified index.
    * @param index The zero-based index of the desired code unit. A negative index will count back from the last item.
+   *
+   * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/at)
    */
   readonly at: (index: number) => number | undefined;
 
@@ -326,6 +381,8 @@ export type ReadonlyUint8Array = {
    * immediately returns that element value. Otherwise, findLast returns undefined.
    * @param thisArg If provided, it will be used as the this value for each invocation of
    * predicate. If it is not provided, undefined is used instead.
+   *
+   * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/findLast)
    */
   readonly findLast: {
     <S extends number>(
@@ -354,6 +411,8 @@ export type ReadonlyUint8Array = {
    * findLastIndex immediately returns that element index. Otherwise, findLastIndex returns -1.
    * @param thisArg If provided, it will be used as the this value for each invocation of
    * predicate. If it is not provided, undefined is used instead.
+   *
+   * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/findLastIndex)
    */
   readonly findLastIndex: (
     predicate: (
@@ -366,6 +425,8 @@ export type ReadonlyUint8Array = {
 
   /**
    * Copies the array and returns the copy with the elements in reverse order.
+   *
+   * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/toReversed)
    */
   readonly toReversed: () => ReadonlyUint8Array;
 
@@ -378,6 +439,8 @@ export type ReadonlyUint8Array = {
    * const myNums = Uint8Array.from([11, 2, 22, 1]);
    * myNums.toSorted((a, b) => a - b) // Uint8Array(4) [1, 2, 11, 22]
    * ```
+   *
+   * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/toSorted)
    */
   readonly toSorted: (
     compareFn?: (a: number, b: number) => number,
@@ -389,6 +452,8 @@ export type ReadonlyUint8Array = {
    * negative, then it replaces from the end of the array.
    * @param value The value to insert into the copied array.
    * @returns A copy of the original array with the inserted value.
+   *
+   * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/with)
    */
   readonly with: (index: number, value: number) => ReadonlyUint8Array;
 };
