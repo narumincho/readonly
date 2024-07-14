@@ -28,6 +28,7 @@ Deno.test("URLSearchParams", () => {
 });
 
 Deno.test("Int8Array", () => {
+  // Wait for https://github.com/microsoft/TypeScript/pull/59163 to be merged
   const value: ReadonlyInt8Array = new Int8Array(
     [4, 5, 6],
   );
