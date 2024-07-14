@@ -1,5 +1,6 @@
 import type {
   ReadonlyInt16Array,
+  ReadonlyUint16Array,
   ReadonlyUint8Array,
   ReadonlyUint8ClampedArray,
   ReadonlyURL,
@@ -35,6 +36,13 @@ Deno.test("Uint8ClampedArray", () => {
 
 Deno.test("Int16Array", () => {
   const value: ReadonlyInt16Array = new Int16Array(
+    [4, 5, 6],
+  );
+  assertEquals(value[1], 5);
+});
+
+Deno.test("Uint16Array", () => {
+  const value: ReadonlyUint16Array = new Uint16Array(
     [4, 5, 6],
   );
   assertEquals(value[1], 5);
