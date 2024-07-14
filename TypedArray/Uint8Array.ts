@@ -67,14 +67,24 @@ export type ReadonlyUint8Array = {
    * @param thisArg If provided, it will be used as the this value for each invocation of
    * predicate. If it is not provided, undefined is used instead.
    */
-  readonly find: (
-    predicate: (
-      value: number,
-      index: number,
-      obj: ReadonlyUint8Array,
-    ) => boolean,
-    thisArg?: unknown,
-  ) => number | undefined;
+  readonly find: {
+    <S extends number>(
+      predicate: (
+        value: number,
+        index: number,
+        array: ReadonlyUint8Array,
+      ) => value is S,
+      thisArg?: unknown,
+    ): S | undefined;
+    (
+      predicate: (
+        value: number,
+        index: number,
+        obj: ReadonlyUint8Array,
+      ) => boolean,
+      thisArg?: unknown,
+    ): number | undefined;
+  };
 
   /**
    * Returns the index of the first element in the array where predicate is true, and -1
