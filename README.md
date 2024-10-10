@@ -24,7 +24,7 @@ import type { ReadonlyURL } from "jsr:@narumincho/readonly";
 
 const url = new URL("https://example.com");
 func(url);
-console.log(url); // https://example.com
+console.log(url);
 
 const func = (url: ReadonlyURL): void => {
   url.pathname = "/aaa"; // Cannot assign to 'pathname' because it is a read-only property.
