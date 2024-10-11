@@ -1,6 +1,7 @@
 import type {
   ReadonlyBigInt64Array,
   ReadonlyBigUint64Array,
+  ReadonlyDate,
   ReadonlyFloat32Array,
   ReadonlyFloat64Array,
   ReadonlyInt16Array,
@@ -109,4 +110,10 @@ Deno.test("BigUint64Array", () => {
     [4n, 5n, 6n],
   );
   assertEquals(value[1], 5n);
+});
+
+Deno.test("Date", () => {
+  const date: ReadonlyDate = new Date("2024-10-11T00:09:41.781Z");
+  const value = date[Symbol.toPrimitive]("number");
+  assertEquals(value, 1728605381781);
 });
