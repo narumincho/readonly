@@ -1,4 +1,5 @@
 export * from "./URL.ts";
+export * from "./Date.ts";
 export * from "./TypedArray/Int8Array.ts";
 export * from "./TypedArray/Uint8Array.ts";
 export * from "./TypedArray/Uint8ClampedArray.ts";
