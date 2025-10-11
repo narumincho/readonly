@@ -2,7 +2,7 @@
  * A typed array of 8-bit unsigned integer values. The contents are initialized to 0. If the
  * requested number of bytes could not be allocated an exception is raised.
  */
-export type ReadonlyUint8Array = {
+export type ReadonlyUint8Array<TArrayBuffer extends ArrayBufferLike> = {
   // from lib.es5.d.ts
 
   /**
@@ -17,7 +17,7 @@ export type ReadonlyUint8Array = {
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/buffer)
    */
-  readonly buffer: ArrayBufferLike;
+  readonly buffer: TArrayBuffer;
 
   /**
    * The length in bytes of the array.
@@ -47,7 +47,7 @@ export type ReadonlyUint8Array = {
     predicate: (
       value: number,
       index: number,
-      array: ReadonlyUint8Array,
+      array: ReadonlyUint8Array<TArrayBuffer>,
     ) => unknown,
     thisArg?: unknown,
   ) => boolean;
@@ -65,10 +65,10 @@ export type ReadonlyUint8Array = {
     predicate: (
       value: number,
       index: number,
-      array: ReadonlyUint8Array,
+      array: ReadonlyUint8Array<TArrayBuffer>,
     ) => boolean,
     thisArg?: unknown,
-  ) => ReadonlyUint8Array;
+  ) => ReadonlyUint8Array<TArrayBuffer>;
 
   /**
    * Returns the value of the first element in the array where predicate is true, and undefined
@@ -86,7 +86,7 @@ export type ReadonlyUint8Array = {
       predicate: (
         value: number,
         index: number,
-        array: ReadonlyUint8Array,
+        array: ReadonlyUint8Array<TArrayBuffer>,
       ) => value is S,
       thisArg?: unknown,
     ): S | undefined;
@@ -94,7 +94,7 @@ export type ReadonlyUint8Array = {
       predicate: (
         value: number,
         index: number,
-        obj: ReadonlyUint8Array,
+        obj: ReadonlyUint8Array<TArrayBuffer>,
       ) => boolean,
       thisArg?: unknown,
     ): number | undefined;
@@ -115,7 +115,7 @@ export type ReadonlyUint8Array = {
     predicate: (
       value: number,
       index: number,
-      obj: ReadonlyUint8Array,
+      obj: ReadonlyUint8Array<TArrayBuffer>,
     ) => boolean,
     thisArg?: unknown,
   ) => number;
@@ -133,7 +133,7 @@ export type ReadonlyUint8Array = {
     callbackfn: (
       value: number,
       index: number,
-      array: ReadonlyUint8Array,
+      array: ReadonlyUint8Array<TArrayBuffer>,
     ) => void,
     thisArg?: unknown,
   ) => void;
@@ -188,10 +188,10 @@ export type ReadonlyUint8Array = {
     callbackfn: (
       value: number,
       index: number,
-      array: ReadonlyUint8Array,
+      array: ReadonlyUint8Array<TArrayBuffer>,
     ) => number,
     thisArg?: unknown,
-  ) => ReadonlyUint8Array;
+  ) => ReadonlyUint8Array<TArrayBuffer>;
 
   /**
    * Calls the specified callback function for all the elements in an array. The return value of
@@ -211,7 +211,7 @@ export type ReadonlyUint8Array = {
         previousValue: number,
         currentValue: number,
         currentIndex: number,
-        array: ReadonlyUint8Array,
+        array: ReadonlyUint8Array<TArrayBuffer>,
       ) => number,
     ): number;
     <U>(
@@ -219,7 +219,7 @@ export type ReadonlyUint8Array = {
         previousValue: U,
         currentValue: number,
         currentIndex: number,
-        array: ReadonlyUint8Array,
+        array: ReadonlyUint8Array<TArrayBuffer>,
       ) => U,
       initialValue: U,
     ): U;
@@ -243,7 +243,7 @@ export type ReadonlyUint8Array = {
         previousValue: number,
         currentValue: number,
         currentIndex: number,
-        array: ReadonlyUint8Array,
+        array: ReadonlyUint8Array<TArrayBuffer>,
       ) => number,
     ): number;
     <U>(
@@ -251,7 +251,7 @@ export type ReadonlyUint8Array = {
         previousValue: U,
         currentValue: number,
         currentIndex: number,
-        array: ReadonlyUint8Array,
+        array: ReadonlyUint8Array<TArrayBuffer>,
       ) => U,
       initialValue: U,
     ): U;
@@ -264,7 +264,10 @@ export type ReadonlyUint8Array = {
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/slice)
    */
-  readonly slice: (start?: number, end?: number) => ReadonlyUint8Array;
+  readonly slice: (
+    start?: number,
+    end?: number,
+  ) => ReadonlyUint8Array<TArrayBuffer>;
 
   /**
    * Determines whether the specified callback function returns true for any element of an array.
@@ -280,7 +283,7 @@ export type ReadonlyUint8Array = {
     predicate: (
       value: number,
       index: number,
-      array: ReadonlyUint8Array,
+      array: ReadonlyUint8Array<TArrayBuffer>,
     ) => boolean,
     thisArg?: unknown,
   ) => boolean;
@@ -293,7 +296,10 @@ export type ReadonlyUint8Array = {
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/subarray)
    */
-  readonly subarray: (begin?: number, end?: number) => ReadonlyUint8Array;
+  readonly subarray: (
+    begin?: number,
+    end?: number,
+  ) => ReadonlyUint8Array<TArrayBuffer>;
 
   /**
    * Returns a string representation of an array.
@@ -303,7 +309,7 @@ export type ReadonlyUint8Array = {
   readonly toString: () => string;
 
   /** Returns the primitive value of the specified object. */
-  readonly valueOf: () => ReadonlyUint8Array;
+  readonly valueOf: () => ReadonlyUint8Array<TArrayBuffer>;
 
   readonly [index: number]: number;
 
@@ -389,7 +395,7 @@ export type ReadonlyUint8Array = {
       predicate: (
         value: number,
         index: number,
-        array: ReadonlyUint8Array,
+        array: ReadonlyUint8Array<TArrayBuffer>,
       ) => value is S,
       thisArg?: unknown,
     ): S | undefined;
@@ -397,7 +403,7 @@ export type ReadonlyUint8Array = {
       predicate: (
         value: number,
         index: number,
-        array: ReadonlyUint8Array,
+        array: ReadonlyUint8Array<TArrayBuffer>,
       ) => unknown,
       thisArg?: unknown,
     ): number | undefined;
@@ -418,7 +424,7 @@ export type ReadonlyUint8Array = {
     predicate: (
       value: number,
       index: number,
-      array: ReadonlyUint8Array,
+      array: ReadonlyUint8Array<TArrayBuffer>,
     ) => unknown,
     thisArg?: unknown,
   ) => number;
@@ -428,7 +434,7 @@ export type ReadonlyUint8Array = {
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/toReversed)
    */
-  readonly toReversed: () => ReadonlyUint8Array;
+  readonly toReversed: () => ReadonlyUint8Array<TArrayBuffer>;
 
   /**
    * Copies and sorts the array.
@@ -444,7 +450,7 @@ export type ReadonlyUint8Array = {
    */
   readonly toSorted: (
     compareFn?: (a: number, b: number) => number,
-  ) => ReadonlyUint8Array;
+  ) => ReadonlyUint8Array<TArrayBuffer>;
 
   /**
    * Copies the array and inserts the given number at the provided index.
@@ -455,5 +461,8 @@ export type ReadonlyUint8Array = {
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/with)
    */
-  readonly with: (index: number, value: number) => ReadonlyUint8Array;
+  readonly with: (
+    index: number,
+    value: number,
+  ) => ReadonlyUint8Array<TArrayBuffer>;
 };

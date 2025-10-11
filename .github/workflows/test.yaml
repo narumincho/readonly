@@ -8,11 +8,11 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: setup Deno
         uses: denoland/setup-deno@v2
         with:
           deno-version: v2.x
-      - run: deno lint .
-      - run: deno test .
+      - run: deno lint
+      - run: deno test
       - run: deno publish --dry-run

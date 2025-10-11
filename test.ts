@@ -14,7 +14,7 @@ import type {
   ReadonlyURL,
   ReadonlyURLSearchParams,
 } from "./mod.ts";
-import { assertEquals } from "jsr:@std/assert";
+import { assertEquals } from "@std/assert";
 
 Deno.test("URL", () => {
   const value: ReadonlyURL = new URL("https://example.com");
@@ -36,7 +36,7 @@ Deno.test("Int8Array", () => {
 });
 
 Deno.test("Uint8Array", () => {
-  const value: ReadonlyUint8Array = new Uint8Array(
+  const value: ReadonlyUint8Array<ArrayBuffer> = new Uint8Array(
     [4, 5, 6],
   );
   assertEquals(value[1], 5);

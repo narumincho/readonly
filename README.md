@@ -6,6 +6,7 @@ TypeScript readonly type
 
 - ReadonlyURL
 - ReadonlyURLSearchParams
+- ReadonlyUint8Array
 
 ## Example
 
